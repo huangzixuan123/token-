@@ -1,0 +1,49 @@
+{
+  "name": "vue-manage-system",
+  "version": "4.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "upload": "node upload.js",
+    "deploy": "npm run build && npm run upload"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "babel-polyfill": "^6.26.0",
+    "date-fns": "^2.16.1",
+    "dayjs": "^1.10.4",
+    "echarts": "^5.0.2",
+    "element-ui": "^2.11.0",
+    "file-saver": "^2.0.5",
+    "mavon-editor": "^2.6.17",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "scp2": "^0.5.0",
+    "scss": "^0.2.4",
+    "sweetalert": "^2.1.2",
+    "v-fit-columns": "^0.2.0",
+    "vue": "^2.6.10",
+    "vue-cropperjs": "^3.0.0",
+    "vue-i18n": "^8.10.0",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.0.3",
+    "vue-schart": "^2.0.0",
+    "vuedraggable": "^2.17.0",
+    "xlsx": "^0.16.9"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "axios": "^0.18.1",
+    "less": "^4.1.0",
+    "less-loader": "^7.3.0",
+    "script-loader": "^0.7.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
