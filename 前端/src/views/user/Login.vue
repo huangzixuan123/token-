@@ -114,7 +114,7 @@ export default {
 
                     this.$message.success('登录成功');
                     // 显示
-                    // this.$message.success(JSON.stringify(res));
+                    this.$message.success(JSON.stringify(res));
 
                     this.$router.push('/');
                 } else {

@@ -56,7 +56,7 @@ Vue.prototype.dayjs = dayjs;
 let JSONuser = JSON.parse(window.sessionStorage.getItem("user"));
 router.beforeEach((to, from, next) => {
     console.log(to.path)
-    let user = window.sessionStorage.getItem("name");
+    let user = window.sessionStorage.getItem("token");
 
     if (user && to.path === '/login') return next('/');
     if (user && to.path === '/reg') return next('/');

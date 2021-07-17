@@ -22,7 +22,7 @@
                 <!-- 用户名下拉菜单 -->
                 <el-dropdown class="user-name" trigger="click" @command="handleCommand">
                     <span class="el-dropdown-link">
-                        {{name}} 
+                        {{this.name}} 
                         <!-- {{ this.user }} -->
                         <i class="el-icon-caret-bottom"></i>
                     </span>
@@ -60,7 +60,7 @@ export default {
         // 用户名下拉菜单选择事件
         handleCommand(command) {
             if (command == 'loginout') {
-                window.sessionStorage.removeItem('name');
+                window.sessionStorage.removeItem('token');
                 this.$router.push('/login');
             }
             if (command == 'change') this.$router.push('/change');
