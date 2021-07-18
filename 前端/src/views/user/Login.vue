@@ -119,11 +119,19 @@ export default {
                     window.sessionStorage.setItem('name', res.data.name);
                     window.sessionStorage.setItem('token', res.data.token);
 
-                    this.$message.success('登录成功');
+                    // this.$message.success('登录成功');
                     // 显示
                     let date = new Date().getTime();
-                    var datas = Object.assign(res, { startTime: new Date().getTime() });
-                    this.$message.success(date + ',' + 86400000 + '+++++++++'+datas.startTime);
+                    window.sessionStorage.setItem('datas', date);
+
+                    // this.$message.success(date + ',' + 86400000 + '+++++++++');
+
+                    // let datas = Object.assign(res, { startTime: new Date().getTime() });
+                    // window.sessionStorage.setItem('datas', datas);
+                    // this.$message.success(JSON.stringify(datas.startTime)+"////////////////////////////"+datas.startTime);
+                    // this.$message.success(JSON.stringify(window.sessionStorage.getItem('datas'))+'')
+                    // this.$message.success(window.sessionStorage.getItem('token'));
+                    // this.$message.success(window.sessionStorage.getItem('datas')+"////////////////////////////"+datas.startTime);
 
                     this.$router.push('/');
                 } else {

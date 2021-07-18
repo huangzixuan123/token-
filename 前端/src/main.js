@@ -39,7 +39,7 @@ import {
     FontAwesomeLayers,
     FontAwesomeLayersText
 }
-from '@fortawesome/vue-fontawesome'
+    from '@fortawesome/vue-fontawesome'
 library.add(fas, far, fab)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('font-awesome-layers', FontAwesomeLayers)
@@ -57,11 +57,19 @@ let JSONuser = JSON.parse(window.sessionStorage.getItem("user"));
 router.beforeEach((to, from, next) => {
     console.log(to.path)
     let user = window.sessionStorage.getItem("token");
+    // let user=''
+    let datas = window.sessionStorage.getItem("datas");
+    
+    let date = new Date().getTime();
 
-    if (user && to.path === '/login') return next('/');
-    if (user && to.path === '/reg') return next('/');
-    if (!user && to.path === '/reg') return next();
-    if (!user && to.path !== '/login') return next('/login');
+    if (date - datas > 86400000) 
+        window.sessionStorage.removeItem('token');
+        // user = window.sessionStorage.getItem("token");
+        // return next('/login');
+     if (user && to.path === '/login') return next('/');
+     if (user && to.path === '/reg') return next('/');
+     if (!user && to.path === '/reg') return next();
+     if (!user && to.path !== '/login') return next('/login');
     next()
     // role = JSONuser.role;
     if (to.meta.roles.includes(JSONuser.role)) {
