@@ -38,7 +38,7 @@ const axios=function({path,method="GET",data={}}={}){
         }).then(res=>{
             if(res.data.state===0){
                 console.log(JSON.stringify(res.data));
-                resolve(res.data)
+                resolve(res)
             }else{
                 reject(res.data)
             }

@@ -9,13 +9,20 @@
                     </el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input type="password" placeholder="密码" v-model="param.password" @keyup.enter.native="submitForm()">
+                    <el-input
+                        type="password"
+                        placeholder="密码"
+                        v-model="param.password"
+                        @keyup.enter.native="submitForm()"
+                    >
                         <el-button slot="prepend" icon="el-icon-lx-lock"></el-button>
                     </el-input>
                 </el-form-item>
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm()">登录</el-button>
-                    <router-link to="reg"><el-button type="info" class="reg-but">注册</el-button></router-link>
+                    <router-link to="reg">
+                        <el-button type="info" class="reg-but">注册</el-button>
+                    </router-link>
                 </div>
 
                 <el-button @click="fileBtn">跳转</el-button>
@@ -109,12 +116,14 @@ export default {
                     });
                     if (res.check === 0) return this.$message.error('请输入正确的用户名和密码');
                     // let r = JSON.stringify(res);
-                    window.sessionStorage.setItem('name', res.name);
-                    window.sessionStorage.setItem('token', res.token);
+                    window.sessionStorage.setItem('name', res.data.name);
+                    window.sessionStorage.setItem('token', res.data.token);
 
                     this.$message.success('登录成功');
                     // 显示
-                    this.$message.success(JSON.stringify(res));
+                    let date = new Date().getTime();
+                    var datas = Object.assign(res, { startTime: new Date().getTime() });
+                    this.$message.success(date + ',' + 86400000 + '+++++++++'+datas.startTime);
 
                     this.$router.push('/');
                 } else {
